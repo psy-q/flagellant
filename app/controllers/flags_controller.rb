@@ -14,4 +14,20 @@ class FlagsController < ApplicationController
       format.html
     end
   end
+
+
+  def update
+    flag = Flag.find(params[:id])
+    flag.update_attributes(flag_params)
+    redirect_to :action => :show
+  end
+
+  private
+
+  def flag_params
+    #params.require(:flag).permit(:flag_layers_attributes => 
+    #                             [ :color01, :color02, :color02, 
+    #                               :color04, :color05, :color06 ]
+    #                            )
+  end
 end
