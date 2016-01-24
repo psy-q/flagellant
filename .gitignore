@@ -16,3 +16,6 @@ vendor/bundle
 /log/*
 !/log/.keep
 /tmp
+
+
+*.swp
