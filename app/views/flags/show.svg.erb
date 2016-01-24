@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
-<g id="tricolour">
-    <rect width="900" height="600" fill="#ED2939"/>
-    <rect width="600" height="600" fill="#fff"/>
-    <rect width="300" height="600" fill="#002395"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="<%= @base_layer.width %>" height="<%= @base_layer.height %>">
+
+<g id="base_layer">
+  <%= render :partial => "flags/base_layers/#{@base_layer.template_name}.svg.erb" %>
 </g>
+
+<% @layers.each do |layer| %>
+  <%= render :partial => "flags/layers/#{layer.template_name}.svg.erb" %>
+<% end %>
+
 </svg>

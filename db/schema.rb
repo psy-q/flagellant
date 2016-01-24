@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123150318) do
+ActiveRecord::Schema.define(version: 20160124094649) do
 
   create_table "flag_layers", force: :cascade do |t|
     t.integer  "flag_id"
@@ -32,13 +32,16 @@ ActiveRecord::Schema.define(version: 20160123150318) do
     t.datetime "updated_at",     null: false
     t.integer  "width"
     t.integer  "height"
+    t.integer  "sortorder"
+    t.boolean  "is_base_layer"
   end
 
   create_table "flags", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "base_layer_id"
   end
 
 end
