@@ -13,7 +13,7 @@ Template: <%= @base_layer.template_name %>
 <%= form_for @flag do |f| %>
   <%= f.fields_for :flag_layers do |flag_layers_form| %>
     <p>
-    <%= flag_layers_form.color_field(:color01) %>
+    <%= flag_layers_form.text_field(:color01, :id => 'foop') %>
     <%= flag_layers_form.color_field(:color02) %>
     <%= flag_layers_form.color_field(:color03) %>
     <%= flag_layers_form.color_field(:color04) %>
