@@ -1,0 +1,9 @@
+<h1>Flag <%= @flag.id %></h1>
+
+<%= #image_tag(flag_path(@flag, :format => 'svg'), :width => @flag.base_layer.width, :height => @flag.base_layer.height) 
+%>
+
+<%= render :file => 'flags/show.svg.erb' %>
+
+<%= render 'form' %>
+

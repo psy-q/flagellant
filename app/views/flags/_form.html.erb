@@ -5,12 +5,7 @@ Template: <%= @base_layer.template_name %>
 <%= form_for @flag do |f| %>
   <%= f.fields_for :flag_layers do |flag_layers_form| %>
     <p>
-      <%= flag_layers_form.text_field(:color01,  :size => 7, :class => 'colorpicker') %>
-      <%= flag_layers_form.text_field(:color02,  :size => 7, :class => 'colorpicker') %>
-      <%= flag_layers_form.text_field(:color03,  :size => 7, :class => 'colorpicker') %>
-      <%= flag_layers_form.text_field(:color04,  :size => 7, :class => 'colorpicker') %>
-      <%= flag_layers_form.text_field(:color05,  :size => 7, :class => 'colorpicker') %>
-      <%= flag_layers_form.text_field(:color06,  :size => 7, :class => 'colorpicker') %>
+      <%= render :partial => 'color_pickers', :locals => {:layer => flag_layers_form} %>
     </p>
   <% end %>
   <%= f.submit %>

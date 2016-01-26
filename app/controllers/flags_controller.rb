@@ -25,6 +25,9 @@ class FlagsController < ApplicationController
     flag_and_layers
   end
 
+  def edit
+    flag_and_layers
+  end
 
   def update
     flag = Flag.find(params[:id])

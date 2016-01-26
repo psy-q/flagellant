@@ -1,0 +1,7 @@
+<h1>New flag layer</h1>
+
+<p>Foo.</p>
+
+<%= form_for [@flag, @flag_layer] do |f| %>
+  <%= render :partial => 'flags/color_pickers', :locals => {:layer => f} %>
+<% end %>
