@@ -5,21 +5,5 @@
 
 <%= render :file => 'flags/show.svg.erb' %>
 
+<%= render 'form' %>
 
-<h3>Layer attributes</h3>
-
-Template: <%= @base_layer.template_name %>
-
-<%= form_for @flag do |f| %>
-  <%= f.fields_for :flag_layers do |flag_layers_form| %>
-    <p>
-    <%= flag_layers_form.text_field(:color01, :id => 'foop') %>
-    <%= flag_layers_form.color_field(:color02) %>
-    <%= flag_layers_form.color_field(:color03) %>
-    <%= flag_layers_form.color_field(:color04) %>
-    <%= flag_layers_form.color_field(:color05) %>
-    <%= flag_layers_form.color_field(:color06) %>
-    </p>
-  <% end %>
-  <%= f.submit %>
-<% end %>
