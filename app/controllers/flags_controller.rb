@@ -3,8 +3,11 @@ class FlagsController < ApplicationController
   def flag_and_layers
     if params[:id]
       @flag = Flag.find(params[:id])
+      @base_layer = @flag.base_layer
     else
       @flag = Flag.new
+      layer = FlagLayer.new(:is_base_layer => true)
+      @flag.base_layer = layer
     end
     @base_layer = @flag.base_layer
     @layers = @flag.flag_layers.where(:is_base_layer => false).all.order(:sortorder)

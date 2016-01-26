@@ -1,5 +1,12 @@
 <h1>New flag</h1>
 
-<%= render :file => 'flags/show.svg.erb' %>
+<p>Choose base layer:</p>
 
-<%= render 'form' %>
+<%= form_for @flag do |f| %>
+  <%= f.fields_for :flag_layers do |flag_layers_form| %>
+    <%= flag_layers_form.text_field(:template_name) %>
+    <%= flag_layers_form.text_field(:width) %>
+    <%= flag_layers_form.text_field(:height) %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
