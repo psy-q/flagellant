@@ -1,7 +1,3 @@
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery-ui'
-end
-
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -19,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 # Kickin it old-school instead
@@ -41,7 +38,8 @@ gem 'rsvg2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  #gem 'byebug'
+  gem 'pry'
 end
 
 group :development do
