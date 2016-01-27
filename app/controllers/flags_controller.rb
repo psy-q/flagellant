@@ -32,7 +32,9 @@ class FlagsController < ApplicationController
   def update
     flag = Flag.find(params[:id])
     flag.update_attributes(flag_params)
-    redirect_to :action => :show
+    respond_to do |format| 
+      format.html { redirect_to :action => :show }
+    end
   end
 
   private
