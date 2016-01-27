@@ -5,7 +5,7 @@ Template: <%= @base_layer.template_name %>
 <%= form_for @flag do |f| %>
   <%= f.fields_for :flag_layers do |flag_layers_form| %>
     <p>
-      <%= render :partial => 'color_pickers', :locals => {:layer => flag_layers_form} %>
+      <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer => flag_layers_form} %>
     </p>
   <% end %>
   <%= f.submit %>

@@ -5,6 +5,9 @@ $( document ).ready(function() {
         function() {
             var altField = this.dataset.altfield;
             var altProperties = this.dataset.altproperties;
+            if (!altProperties) {
+                altProperties = 'fill';
+            }
             $(this).colorpicker({
                 altField:      altField,
                 altProperties: altProperties,

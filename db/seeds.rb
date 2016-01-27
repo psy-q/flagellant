@@ -9,4 +9,5 @@
 FlagLayer.create(:template_name => 'tricolour_vertical',
                  :width => 900,
                  :height => 600,
-                 :is_base_layer => true)
+                 :is_base_layer => true,
+                 :max_colors => 3)

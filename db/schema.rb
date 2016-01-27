@@ -11,31 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127110500) do
+ActiveRecord::Schema.define(version: 20160127185030) do
 
   create_table "flag_layers", force: :cascade do |t|
     t.integer  "flag_id"
     t.string   "template_name"
-    t.string   "color01"
-    t.string   "color02"
-    t.string   "color03"
-    t.string   "color04"
-    t.string   "color05"
-    t.string   "color06"
-    t.string   "accent_color01"
-    t.string   "accent_color02"
-    t.string   "accent_color03"
-    t.string   "accent_color04"
-    t.string   "accent_color05"
-    t.string   "accent_color06"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "color1"
+    t.string   "color2"
+    t.string   "color3"
+    t.string   "color4"
+    t.string   "color5"
+    t.string   "color6"
+    t.string   "stroke1"
+    t.string   "stroke2"
+    t.string   "stroke3"
+    t.string   "stroke4"
+    t.string   "stroke5"
+    t.string   "stroke6"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "width"
     t.integer  "height"
     t.integer  "sortorder"
     t.boolean  "is_base_layer"
-    t.text     "target_css"
-    t.text     "target_property"
+    t.integer  "max_colors",    default: 0
+    t.integer  "max_strokes",   default: 0
   end
 
   create_table "flags", force: :cascade do |t|
