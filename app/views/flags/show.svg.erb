@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="<%= @base_layer.width %>" height="<%= @base_layer.height %>">
 
-<g id="base_layer">
+<g class="base_layer" id="base_layer_<%= @base_layer.id %>">
 <%= render :partial => "flags/base_layers/#{@base_layer.template_name}.svg.erb", :locals => { :layer => @base_layer } %>
 </g>
 
 <% @layers.each do |layer| %>
+  <g class="layer" id="layer_<%= layer.id %>">
   <%= render :partial => "flags/layers/#{layer.template_name}.svg.erb", :locals => { :layer => layer } %>
+  </g>
 <% end %>
 
 </svg>

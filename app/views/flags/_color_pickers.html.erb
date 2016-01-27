@@ -1,5 +1,7 @@
     <p>
-      <%= layer.text_field(:color01,  :size => 7, :class => 'colorpicker') %>
+      <%= layer.text_field(:color01,  :size => 7, :class => 'colorpicker',
+                           :data => { :altfield => '#base_layer rect.color01',
+                                      :altproperties => 'fill'} ) %>
       <%= layer.text_field(:color02,  :size => 7, :class => 'colorpicker') %>
       <%= layer.text_field(:color03,  :size => 7, :class => 'colorpicker') %>
       <%= layer.text_field(:color04,  :size => 7, :class => 'colorpicker') %>
