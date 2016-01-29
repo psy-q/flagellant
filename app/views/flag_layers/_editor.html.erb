@@ -1,9 +1,6 @@
-<div class="layer_settings <%= " sortable " unless layer.object == @flag.base_layer %>">
-    <div class="handle">
-      <% unless layer.object == @flag.base_layer %>
-        OO
-      <% end %>
-    </div>
-    Template: <%= layer.object.template_name %><br/>
+<div class="group <%= 'sortable' unless layer.object == @base_layer %>">
+  <h3 class="ui-accordion-header">Template: <%= layer.object.template_name %> <%= '(base layer)' if layer.object == @base_layer %></h3>
+  <div class="ui-accordion-content">
     <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer => layer} %>
+  </div>
 </div>

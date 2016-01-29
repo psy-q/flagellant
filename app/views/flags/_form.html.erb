@@ -1,10 +1,10 @@
-<h3>Layers</h3>
+<h2>Layers</h2>
 
-<div id="flag_editor">
-  <%= form_for @flag do |f| %>
-    <%= f.fields_for :flag_layers do |layer| %>
+<%= form_for @flag do |f| %>
+  <div id="flag_editor" class="ui-accordion">
+    <%= f.fields_for :flag_layers, @flag.flag_layers.reverse do |layer| %>
       <%= render :partial => 'flag_layers/editor', :locals => { :layer => layer } %>
     <% end %>
-    <%= f.submit %>
-  <% end %>
-</div>
+  </div>
+  <%= f.submit %>
+<% end %>

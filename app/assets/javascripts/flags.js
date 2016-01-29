@@ -2,13 +2,19 @@
 
 $( document ).ready(function() {
 
-    $('#flag_editor').sortable({
-        items: '.layer_settings.sortable',
-        axis: 'y',
-        cursor: 'move',
-        handle: '.handle',
-
-    });
+    $('#flag_editor')
+        .accordion({
+            header: '> div > h3'
+        })
+        .sortable({
+            items: '> .sortable',
+            axis: 'y',
+            handle: 'h3',
+            placeholder: 'ui-state-highlight',
+            stop: function() {
+                $( this ).accordion("refresh");
+            }
+        });
 
     $('input.colorpicker').each(
         function() {
