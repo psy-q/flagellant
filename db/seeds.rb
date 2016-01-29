@@ -11,3 +11,9 @@ FlagLayer.create(:template_name => 'tricolour_vertical',
                  :height => 600,
                  :is_base_layer => true,
                  :max_colors => 3)
+
+FlagLayer.create(:template_name => 'cross_of_burgundy',
+                 :width => 900,
+                 :height => 600,
+                 :is_base_layer => false,
+                 :max_colors => 1)
