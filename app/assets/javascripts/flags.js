@@ -1,6 +1,11 @@
 //=require jquery.colorpicker
 
 $( document ).ready(function() {
+
+    $('#flag_editor .flag_layer_editor .sortable').sortable({
+        axis: 'y',
+    });
+
     $('input.colorpicker').each(
         function() {
             var altField = this.dataset.altfield;

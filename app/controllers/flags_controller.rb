@@ -41,8 +41,12 @@ class FlagsController < ApplicationController
 
   def flag_params
     params.require(:flag).permit(:flag_layers_attributes => 
-                                 [ :id, :color01, :color02, :color03, 
-                                   :color04, :color05, :color06 ]
+                                 [ :id, 
+                                   :color1, :color2, :color3, 
+                                   :color4, :color5, :color6,
+                                   :stroke1, :stroke2, :stroke3, 
+                                   :stroke4, :stroke5, :stroke6 
+                                 ]
                                 )
   end
 end

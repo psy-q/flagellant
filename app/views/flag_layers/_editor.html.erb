@@ -1,0 +1,3 @@
+<div class="flag_layer_editor<%= " sortable " unless layer.object == @flag.base_layer %>">
+  <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer => layer} %>
+</div>

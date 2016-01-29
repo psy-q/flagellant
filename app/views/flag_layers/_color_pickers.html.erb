@@ -1,9 +1,9 @@
-    <p>
-      Fills: <% (1..layer.object.max_colors).each do |i| %>
-        <%= color_picker_field(layer, "color#{i}") %>
-      <% end %>
-      <br/>
-      Strokes: <% (1..layer.object.max_strokes).each do |i| %>
-        <%= color_picker_field(layer, "stroke#{i}", 'stroke') %>
-      <% end %>
-    </p>
+<p>
+  Fills: <% (1..layer.object.max_colors).each do |i| %>
+    <%= color_picker_field(layer, "color#{i}") %>
+  <% end %>
+  <br/>
+  Strokes: <% (1..layer.object.max_strokes).each do |i| %>
+    <%= color_picker_field(layer, "stroke#{i}", 'stroke') %>
+  <% end %>
+</p>
