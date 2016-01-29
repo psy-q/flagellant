@@ -1,7 +1,5 @@
 <h3>Layers</h3>
 
-Base layer: <%= @base_layer.template_name %>
-
 <div id="flag_editor">
   <%= form_for @flag do |f| %>
     <%= f.fields_for :flag_layers do |layer| %>

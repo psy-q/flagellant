@@ -1,3 +1,9 @@
 <div class="layer_settings <%= " sortable " unless layer.object == @flag.base_layer %>">
-  <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer => layer} %>
+    <div class="handle">
+      <% unless layer.object == @flag.base_layer %>
+        OO
+      <% end %>
+    </div>
+    Template: <%= layer.object.template_name %><br/>
+    <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer => layer} %>
 </div>

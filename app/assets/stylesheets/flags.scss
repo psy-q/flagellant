@@ -6,3 +6,20 @@
 *= require 'jquery-ui'
 *= require 'jquery.colorpicker'
 */
+
+#flag_editor { 
+  .handle, .color_pickers {
+    float: left;
+  }
+  
+  .handle {
+    width: 40px;
+    border: 1px solid black;
+  }
+}
+
+#flag_editor .layer_settings:after {
+  clear: both;
+  content: '';
+  display: block;
+}

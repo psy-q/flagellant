@@ -2,8 +2,12 @@
 
 $( document ).ready(function() {
 
-    $('#flag_editor .layer_settings .sortable').sortable({
-        axis: 'y'
+    $('#flag_editor').sortable({
+        items: '.layer_settings.sortable',
+        axis: 'y',
+        cursor: 'move',
+        handle: '.handle',
+
     });
 
     $('input.colorpicker').each(
