@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="<%= @base_layer.width %>" height="<%= @base_layer.height %>">
+<svg xmlns="http://www.w3.org/2000/svg" width="<%= @flag.base_layer.width %>" height="<%= @flag.base_layer.height %>">
 
-<g class="base_layer layer" id="flag_layer_<%= @base_layer.id %>">
-<%= render :partial => "flags/base_layers/#{@base_layer.template_name}.svg.erb", :locals => { :layer => @base_layer } %>
-</g>
-
-<% @layers.each do |layer| %>
-  <g class="layer" id="flag_layer_<%= layer.id %>">
+<% @flag.flag_layers.order("sortorder ASC").each do |layer| %>
+  <g class="layer <%= 'base_layer' if layer.is_base_layer? %>" id="flag_layer_<%= layer.id %>">
   <%= render :partial => "flags/layers/#{layer.template_name}.svg.erb", :locals => { :layer => layer } %>
   </g>
 <% end %>

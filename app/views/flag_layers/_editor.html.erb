@@ -1,7 +1,11 @@
-<div class="group ui-state-default <%= 'sortable' unless layer_form.object == @base_layer %>">
-  <h3 class="ui-accordion-header">Template: <%= layer_form.object.template_name %> <%= '(base layer)' if layer_form.object == @base_layer %></h3>
+<div class="group ui-state-default <%= 'sortable' unless layer_form.object.is_base_layer? %>" data-targetid="<%= "#flag_layer_#{layer_form.object.id}" %>">
+
+
+  <h3 class="ui-accordion-header">Template: <%= layer_form.object.template_name %> <%= '(base layer)' if layer_form.object.is_base_layer? %></h3>
   <div class="ui-accordion-content">
     <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer_form => layer_form} %>
-    <%= layer_form.hidden_field :sortorder %>
+    <% unless layer_form.object.is_base_layer? %>
+    <%= layer_form.text_field :sortorder, :data => { :fieldname => 'sortorder' } %>
+    <% end %>
   </div>
 </div>

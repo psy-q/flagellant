@@ -9,8 +9,6 @@ class FlagsController < ApplicationController
       layer = FlagLayer.new(:is_base_layer => true)
       @flag.base_layer = layer
     end
-    @base_layer = @flag.base_layer
-    @layers = @flag.flag_layers.where(:is_base_layer => false).all.order(:sortorder)
   end
 
   def show
@@ -41,7 +39,7 @@ class FlagsController < ApplicationController
 
   def flag_params
     params.require(:flag).permit(:flag_layers_attributes => 
-                                 [ :id, 
+                                 [ :id, :sortorder,
                                    :color1, :color2, :color3, 
                                    :color4, :color5, :color6,
                                    :stroke1, :stroke2, :stroke3, 

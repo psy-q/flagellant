@@ -1,8 +1,11 @@
 <h2>Layers</h2>
 
+<%= @flag.flag_layers.order("sortorder DESC").collect(&:id) %>
+<%= @flag.flag_layers.order("sortorder DESC").collect(&:sortorder) %>
+
 <%= form_for @flag do |f| %>
   <div id="flag_editor" class="ui-accordion">
-    <%= f.fields_for :flag_layers, @flag.flag_layers.reverse do |layer_form| %>
+    <%= f.fields_for :flag_layers, @flag.flag_layers.order("sortorder DESC") do |layer_form| %>
       <%= render :partial => 'flag_layers/editor', :locals => { :layer_form => layer_form } %>
     <% end %>
   </div>

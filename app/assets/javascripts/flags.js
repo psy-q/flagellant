@@ -1,5 +1,26 @@
 //=require jquery.colorpicker
 
+function setSortOrder(element, value) {
+    $(element).find('input').each(function() {
+        if (this.dataset && this.dataset.fieldname == 'sortorder') {
+               $(this).val(value);
+        }
+    });
+}
+
+function reorderLayers() {
+    var newOrder = [];
+    // start from 1 because the base layer is always 0
+    var i = 1; 
+    $('#flag_editor .group').get().reverse().map(function(element) {
+        setSortOrder(element, i);
+        newOrder.push(element.dataset.targetid);
+        i++;
+    });
+    console.log(newOrder);
+    // TODO: order SVG layers in order of groups in array
+}
+
 $( document ).ready(function() {
 
     $('#flag_editor')
@@ -12,6 +33,7 @@ $( document ).ready(function() {
             handle: 'h3',
             placeholder: 'ui-state-highlight',
             stop: function() {
+                reorderLayers();
                 $( this ).accordion("refresh");
             }
         });
