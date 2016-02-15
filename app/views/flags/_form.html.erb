@@ -9,5 +9,6 @@
       <%= render :partial => 'flag_layers/editor', :locals => { :layer_form => layer_form } %>
     <% end %>
   </div>
+  <%= hidden_field_tag :secret, params[:secret] %>
   <%= f.submit %>
 <% end %>

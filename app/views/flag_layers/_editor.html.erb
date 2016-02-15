@@ -5,7 +5,7 @@
   <div class="ui-accordion-content">
     <%= render :partial => 'flag_layers/color_pickers', :locals => {:layer_form => layer_form} %>
     <% unless layer_form.object.is_base_layer? %>
-    <%= layer_form.text_field :sortorder, :data => { :fieldname => 'sortorder' } %>
+    <%= layer_form.hidden_field :sortorder, :data => { :fieldname => 'sortorder' } %>
     <% end %>
   </div>
 </div>

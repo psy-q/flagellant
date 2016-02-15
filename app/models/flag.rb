@@ -9,8 +9,18 @@ class Flag < ActiveRecord::Base
 
   validate :exactly_one_base_layer
 
+  before_create :assign_secret
+
 
   private
+
+  def assign_secret
+    secret = "#{RandomWord.adjs.next}-#{RandomWord.nouns.next}"
+    while Flag.where(:secret => secret).count > 0
+      secret = "#{RandomWord.adjs.next}-#{RandomWord.nouns.next}"
+    end
+    self.secret = secret
+  end
 
   def exactly_one_base_layer
     if self.base_layer.is_base_layer? == false

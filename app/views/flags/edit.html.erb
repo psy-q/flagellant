@@ -1,6 +1,11 @@
-<h1>Flag <%= @flag.id %></h1>
+<h2>Flag <%= @flag.id %></h2>
 
-<%= render :file => 'flags/show.svg.erb' %>
+<p>In order to edit this flag in future, you'll need the edit secret or edit link. Edit secret: <%= @flag.secret %>. Append this to the URL like so if you want to edit the flag: <%= edit_flag_path(@flag, :params => { :secret => @flag.secret }) %>. You can also copy the edit link <%= link_to("from here", edit_flag_path(@flag, :params => { :secret => @flag.secret })) %>.</p>
+<p>And finally, you can also bookmark this page to return to editing later.</p>
+
+<div id="flag">
+  <%= render :file => 'flags/show.svg.erb' %>
+</div>
 
 <%= render 'form' %>
 

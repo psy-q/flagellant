@@ -1,9 +1,9 @@
-<h1>Flag <%= @flag.id %></h1>
-
-<%= #image_tag(flag_path(@flag, :format => 'svg'), :width => @flag.base_layer.width, :height => @flag.base_layer.height) 
-%>
+<h2>Flag <%= @flag.id %></h2>
 
 <%= render :file => 'flags/show.svg.erb' %>
 
-<%= render 'form' %>
+<p>
+  <%= link_to('Download flag as SVG', flag_path(@flag, :format => 'svg')) %> (Might have to right-click and 'Save as...')
+</p>
 
+<p>Did you create this flag? If so, you can use the secret token and edit link given on the original edit page to modify it.</p>

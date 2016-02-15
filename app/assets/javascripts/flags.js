@@ -8,6 +8,14 @@ function setSortOrder(element, value) {
     });
 }
 
+function reorderSVG(element_ids) {
+    var flag = $('#flag svg');
+    $.each(element_ids, function(index, value) {
+            var element = $(value).remove();
+            flag.append(element);
+    });
+}
+
 function reorderLayers() {
     var newOrder = [];
     // start from 1 because the base layer is always 0
@@ -17,8 +25,7 @@ function reorderLayers() {
         newOrder.push(element.dataset.targetid);
         i++;
     });
-    console.log(newOrder);
-    // TODO: order SVG layers in order of groups in array
+    reorderSVG(newOrder);
 }
 
 $( document ).ready(function() {
