@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215113905) do
+ActiveRecord::Schema.define(version: 20160303174755) do
 
   create_table "flag_layers", force: :cascade do |t|
     t.integer  "flag_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160215113905) do
     t.boolean  "is_base_layer", default: false
     t.integer  "max_colors",    default: 0
     t.integer  "max_strokes",   default: 0
+    t.boolean  "is_template"
   end
 
   create_table "flags", force: :cascade do |t|
@@ -44,7 +45,6 @@ ActiveRecord::Schema.define(version: 20160215113905) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "base_layer_id"
-    t.text     "secret"
   end
 
 end

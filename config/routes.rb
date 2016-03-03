@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   root 'pages#index'
   resources :flags do
-    resources :flag_layers
+    resources :flag_layers, :shallow => true
   end
 
   # Example resource route with options:

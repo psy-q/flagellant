@@ -3,5 +3,5 @@
 <p>Foo.</p>
 
 <%= form_for [@flag, @flag_layer] do |f| %>
-  <%= render :partial => 'flags/color_pickers', :locals => {:layer => f} %>
+  <%= f.select(:template_name, options_from_collection_for_select(@templates, :template_name, :id)) %>
 <% end %>
