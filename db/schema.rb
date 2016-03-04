@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303174755) do
+ActiveRecord::Schema.define(version: 20160304144105) do
 
   create_table "flag_layers", force: :cascade do |t|
     t.integer  "flag_id"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20160303174755) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "base_layer_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "nick"
+    t.string   "provider"
   end
 
 end

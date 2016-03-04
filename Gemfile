@@ -20,6 +20,9 @@ gem 'jquery-ui-rails'
 
 gem 'random-word'
 
+gem 'omniauth'
+gem 'omniauth-reddit', :git => 'git://github.com/jackdempsey/omniauth-reddit.git'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
